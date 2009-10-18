@@ -1,29 +1,85 @@
+/* @override http://127.0.0.1:8000/media/static/css/themes/basic.css */
 
-body {
+body
+{
     color: #333940;
-    background: #f4f4f4;
+    background: #eaeaea;
 }
 
 /* LAYOUT */
-.post .date, .quote .date, .bookmark .date {
-	float: left;
-	padding: .3em .4em .3em 1.2em;
-	background: #c14040;
-	margin: 0.3em 0  0 -6.0em;
-	width: 3.8em;
+
+.post .date, .quote .date, .bookmark .date
+{
+    float: left;
+
+    width: 3.8em;
+
+    margin: 0.3em 0  0 -6.0em;
+
+    padding: 0 .2em 0 1.2em;
+
+    border: solid #c14040 4px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+
+    background: #c14040;
 }
-.post .teaser{ border-bottom: solid 1.0em #333940;}
+
+.post .teaser
+{
+    border-bottom: solid 1.0em #333940;
+}
+
+.post_list .post {
+    border-bottom: none;
+}
 
 /* TYPE */
-h4{ color: #333940;}
-#right-rail p, #right-rail ul{ color: #333940;}
+
+h4
+{
+    color: #333940;
+}
+
+#right-rail p, #right-rail ul
+{
+    color: #333940;
+}
+
+#logo h1 {
+    font-family: HelveticaNeue-UltraLight, Optima, Helvetica, sans-serif;
+    font-weight: lighter;
+    line-height: 130%;
+    font-variant: normal;
+}
 
 /* LINKS */
-a:link, a:visited {
+
+a:link, a:visited
+{
     color: #c14040;
 }
-a:hover { color: #333; }
-h2 a:link, h2 a:visited{ color: #c14040;}
-h2 a:hover { color: #333;}
 
-pre{ color: #333940; background-color: #ccc;}
+a:hover
+{
+    color: #333;
+}
+
+h2 a:link, h2 a:visited
+{
+    color: #c14040;
+}
+
+h2 a:hover
+{
+    color: #333;
+}
+
+pre
+{
+    color: #333940;
+    background-color: white;
+    background-color: rgba(0,0,0, .01);
+    font-family: monofur, profont, monospace;
+    border-left: dotted gray 1px;
+}
