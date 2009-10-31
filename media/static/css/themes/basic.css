@@ -1,32 +1,22 @@
-/* @override http://127.0.0.1:8000/media/static/css/themes/basic.css 
-*/
+/* @override http://127.0.0.1:8000/media/static/css/themes/basic.css */
 
-/* Color values - TODO: switch to CSS templating engine:
+/* Baseline styles: */
 
-	Dark Brown: 		#211E1D
-	Deep Red: 			#6E3B3A
-	Base: 				#A3A28E
-	Slate: 				#383538
-	Yellow Highlight: 	#f8ce00
-
-*/
-
-/* Baseline styles: */ 
-
-body
-{
+body {
     color: black;
-    background: #fce1ba;
+    background-color: #fcecd2;
     font-family: optima;
 }
 
-a:link, a:visited
-{
+a:link, a:visited {
     color: #383538;
 }
 
-a:hover
-{
+.clearfix {
+    border-bottom: none!important;
+}
+
+a:hover {
     color: #978f97;
 }
 
@@ -38,23 +28,23 @@ h2 > a:hover {
     color: #383538!important;
 }
 
-h4, h4 > a
-{
+h4, h4 > a {
     color: #6E3B3A!important;
 }
-
-
 
 /* Code */
 
 .highlight {
-    background-color:rgb(238, 204, 158); /* Override the default white from pygments */
+    /* Override the default white from pygments */
+    background-color: #fcecd2;
 }
 
-pre
-{
+pre {
     color: #333940;
-    background-color: white; /* IE */
+    background-color: white;
+
+
+/* IE */
     background-color: rgba(255,255,255, 0.80);
     font-family: monofur, profont, monospace;
     border: none!important;
@@ -64,23 +54,20 @@ pre
 
 /* LAYOUT */
 
-.post .date, .quote .date, .bookmark .date
-{
+.post .date, .quote .date, .bookmark .date {
     float: left;
     width: 3.8em;
     margin: 0.3em 0  0 -6.0em;
     padding: 0 .2em 0 1.2em;
-
-    background: #d9931f;
-
-    border: solid #d9931f 4px;
+    background: #f1930d;
+    border: 4px solid #f1930d;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
 }
 
-.post_list .post .teaser {
-    border-bottom: none;
+.post .teaser {
+    border-bottom: none!important;
 }
 
 /* Specific Elements */
@@ -91,12 +78,25 @@ pre
     line-height: 120%;
     font-variant: normal;
     font-size: 38pt;
-    color: #850808;
+    color: #be0a0a;
     text-shadow: #6E3B3A 3px 3px 10px;
 }
 
-#right-rail p, #right-rail ul
-{
+#right-rail {
+	width: 320px;
+
+    border: 4px solid #f1ce9d;
+    padding: 4px 4px 4px 8px;
+
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+
+    box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 6px 6px 10px #211E1D;
+}
+
+#right-rail p, #right-rail ul {
     color: #383538;
 }
 
@@ -104,31 +104,26 @@ pre
     position: fixed;
     top: 0;
     right: 0;
-    
     color: #211E1D;
-    background-color: #A3A28E;
-
+    background-color: #f1930d;
     margin: 0;
     padding: 0 0 0 2px;
-
-    border: solid #A3A28E 4px;
-
+    border: 4px solid #f1930d;
     border-bottom-left-radius: 8px;
     -webkit-border-bottom-left-radius: 8px;
     -moz-border-radius-bottomleft: 8px;
-
     box-shadow: 10px 10px 5px #888;
     -webkit-box-shadow: 6px 6px 10px #211E1D;
 }
 
 #nav ul.navbar-one, #nav > form {
-	margin: 2px auto;
+    margin: 2px auto;
     padding: 0;
 }
 
 #footer {
-	margin: 1em auto;
-	width: 50%;
+    margin: 1em auto;
+    width: 50%;
     font-family: "HelveticaNeue-Light", sans-serif;
     text-align: center;
 }
