@@ -52,7 +52,7 @@
 
             <div id="right-rail">
                 <h4>{% trans "About" %}</h4>
-                <p><img src="{{ STATIC_URL }}img/cycling.jpg" style="float:left">{{ BLOG_SETTINGS.about }}</p>
+                <p><img src="{{ STATIC_URL }}img/cycling_tn.jpg" height="105" width="128" style="float:left">{{ BLOG_SETTINGS.about }}</p>
 
                 <h4>Subscribe</h4>
                 <ul>
@@ -132,6 +132,7 @@
         {% cache 7200 "base.analytics" %}
         {% analytics %}
         {% endcache %}
+
         {% block extra_base %}
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
