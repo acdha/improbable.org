@@ -12,6 +12,9 @@ DATABASE_NAME   = os.path.join(os.path.dirname(__file__), 'dev.db')
 
 STATIC_URL = "/media/static/"
 STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'media', 'static')
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__), 'templates'),
+)
 
 SECRET_KEY          = '6es\f,@F-2O4}{yY1w&mzTh!NsSm\me'
 HONEYPOT_FIELD_NAME = 'Jung24_avers'
