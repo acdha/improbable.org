@@ -1,5 +1,15 @@
 # -*- coding: utf-8 -*-
 
+import os
+
+DEBUG           = True
+TEMPLATE_DEBUG  = DEBUG
+LOCAL_DEV       = DEBUG
+THUMBNAIL_DEBUG = DEBUG #sorl-thumbnail
+
+SECRET_KEY          = '6es\f,@F-2O4}{yY1w&mzTh!NsSm\me'
+HONEYPOT_FIELD_NAME = 'Jung24_avers'
+
 #django-contact-form
 DEFAULT_FROM_EMAIL = 'contact-form@improbable.org'
 
@@ -33,3 +43,6 @@ MARKUP_CHOICES = (
     'restructuredtext'
 )
 
+
+DATABASE_ENGINE = 'sqlite3'
+DATABASE_NAME   = os.path.join(os.path.dirname(__file__), 'dev.db')
