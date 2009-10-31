@@ -16,7 +16,7 @@ EMAIL_HOST_PASSWORD = 'ABC'
 EMAIL_USE_TLS       = True
 
 # TODO: Enable memcache
-CACHE_BACKEND                   = 'locmem:///'
+CACHE_BACKEND                   = 'dummy://'
 CACHE_MIDDLEWARE_SECONDS        = 60*5
 CACHE_MIDDLEWARE_KEY_PREFIX     = 'improbable.org.'
 CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True

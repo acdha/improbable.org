@@ -1,9 +1,65 @@
-/* @override http://127.0.0.1:8000/media/static/css/themes/basic.css */
+/* @override http://127.0.0.1:8000/media/static/css/themes/basic.css 
+*/
+
+/* Color values - TODO: switch to CSS templating engine:
+
+	Dark Brown: 		#211E1D
+	Deep Red: 			#6E3B3A
+	Base: 				#A3A28E
+	Slate: 				#383538
+	Yellow Highlight: 	#f8ce00
+
+*/
+
+/* Baseline styles: */ 
 
 body
 {
+    color: black;
+    background: #fce1ba;
+    font-family: optima;
+}
+
+a:link, a:visited
+{
+    color: #383538;
+}
+
+a:hover
+{
+    color: #978f97;
+}
+
+h2, h2 > a {
+    color: #211E1D!important;
+}
+
+h2 > a:hover {
+    color: #383538!important;
+}
+
+h4, h4 > a
+{
+    color: #6E3B3A!important;
+}
+
+
+
+/* Code */
+
+.highlight {
+    background-color:rgb(238, 204, 158); /* Override the default white from pygments */
+}
+
+pre
+{
     color: #333940;
-    background: #eaeaea;
+    background-color: white; /* IE */
+    background-color: rgba(255,255,255, 0.80);
+    font-family: monofur, profont, monospace;
+    border: none!important;
+    border-left: 1px dotted #383538!important;
+    white-space: pre;
 }
 
 /* LAYOUT */
@@ -11,75 +67,87 @@ body
 .post .date, .quote .date, .bookmark .date
 {
     float: left;
-
     width: 3.8em;
-
     margin: 0.3em 0  0 -6.0em;
-
     padding: 0 .2em 0 1.2em;
 
-    border: solid #c14040 4px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
+    background: #d9931f;
 
-    background: #c14040;
+    border: solid #d9931f 4px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
 }
 
-.post .teaser
-{
-    border-bottom: solid 1.0em #333940;
-}
-
-.post_list .post {
+.post_list .post .teaser {
     border-bottom: none;
 }
 
-/* TYPE */
+/* Specific Elements */
 
-h4
-{
-    color: #333940;
+#logo h1 a {
+    font-family: HelveticaNeue-Light, Helvetica, sans-serif;
+    font-weight: 100;
+    line-height: 120%;
+    font-variant: normal;
+    font-size: 38pt;
+    color: #850808;
+    text-shadow: #6E3B3A 3px 3px 10px;
 }
 
 #right-rail p, #right-rail ul
 {
-    color: #333940;
+    color: #383538;
 }
 
-#logo h1 {
-    font-family: HelveticaNeue-UltraLight, Optima, Helvetica, sans-serif;
-    font-weight: lighter;
-    line-height: 130%;
-    font-variant: normal;
+#nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    color: #211E1D;
+    background-color: #A3A28E;
+
+    margin: 0;
+    padding: 0 0 0 2px;
+
+    border: solid #A3A28E 4px;
+
+    border-bottom-left-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-bottomleft: 8px;
+
+    box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 6px 6px 10px #211E1D;
 }
 
-/* LINKS */
-
-a:link, a:visited
-{
-    color: #c14040;
+#nav ul.navbar-one, #nav > form {
+	margin: 2px auto;
+    padding: 0;
 }
 
-a:hover
-{
-    color: #333;
+#footer {
+	margin: 1em auto;
+	width: 50%;
+    font-family: "HelveticaNeue-Light", sans-serif;
+    text-align: center;
 }
 
-h2 a:link, h2 a:visited
-{
-    color: #c14040;
+#footer a {
+    color: inherit!important;
+    font-weight: inherit;
+    text-decoration: underline;
 }
 
-h2 a:hover
-{
-    color: #333;
+#footer p {
+    padding: 0;
+    margin-bottom: .4em;
 }
 
-pre
-{
-    color: #333940;
-    background-color: white;
-    background-color: rgba(0,0,0, .01);
-    font-family: monofur, profont, monospace;
-    border-left: dotted gray 1px;
+#footer img {
+    vertical-align: middle;
+}
+
+#bleeder {
+    display: none;
 }
