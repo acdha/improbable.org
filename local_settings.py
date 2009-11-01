@@ -2,16 +2,15 @@
 
 import os
 
-DEBUG           = True
+DEBUG           = False
 TEMPLATE_DEBUG  = DEBUG
-LOCAL_DEV       = DEBUG
+COMPRESS        = False
+LOCAL_DEV       = True
 THUMBNAIL_DEBUG = DEBUG #sorl-thumbnail
 
 DATABASE_ENGINE = 'sqlite3'
 DATABASE_NAME   = os.path.join(os.path.dirname(__file__), 'dev.db')
 
-STATIC_URL = "/media/static/"
-STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'media', 'static')
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
 STATIC_ROOT= os.path.join(MEDIA_ROOT, "static")
 
