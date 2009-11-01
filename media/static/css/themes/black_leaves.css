@@ -247,7 +247,7 @@ pre {
 /* Decorative fluff */
 
 .post_list, #footer, #nav, .date {
-    box-shadow: 14px 14px 10px rgba(0,0,0,.5);
+    box-shadow: -14px 14px 10px rgba(0,0,0,.5);
     -webkit-box-shadow: -14px 14px 10px rgba(0,0,0,.5);
-    -moz-box-shadow: 14px 14px 10px rgba(0,0,0,.5);
+    -moz-box-shadow: -14px 14px 10px rgba(0,0,0,.5);
 }
