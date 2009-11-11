@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from django.conf import settings
 import os
 
 DEBUG           = True
@@ -16,7 +17,7 @@ STATIC_ROOT= os.path.join(MEDIA_ROOT, "static")
 
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates'),
-)
+) + settings.TEMPLATE_DIRS
 
 SECRET_KEY          = '6es\f,@F-2O4}{yY1w&mzTh!NsSm\me'
 HONEYPOT_FIELD_NAME = 'Jung24_avers'
