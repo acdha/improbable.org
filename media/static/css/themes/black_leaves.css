@@ -43,20 +43,22 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, #nav a:h
     border: 2px solid #f4b73d;
 }
 
-.post_list > div
+.date,
+.post > h2,
+.post > h3,
+.quote > h2,
+.quote > h3,
+.bookmark > h2,
+.bookmark > h3
 {
-    margin: 0;
-}
-
-.date, .post > h2, .quote > h2, .bookmark > h2 {
-    line-height: 1.6em;
+    line-height: 18pt;
     background-color: #f4b73d;
     font-weight: bold;
     border-bottom: 1px solid #be8513;
 }
 
-.post > h2, .quote > h2, .bookmark > h2 {
-	text-indent: 1em;
+.date {
+    width: 4em;
 }
 
 .post .date, .quote .date, .bookmark .date
@@ -78,12 +80,30 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, #nav a:h
     padding: .8em .4em;
 }
 
-.post .teaser
+.post .teaser, p.list-tease
 {
 	padding: .4em .7em;
+    font-style: italic;
+}
+
+.post .teaser {
 	background-color: #caaf84;
 	border-bottom: 1px solid #b19974;
-    font-style: italic;
+}
+
+ul.archive, ul.categories {
+    list-style-position: inside;
+    list-style-type: disc;
+    line-height: 1.1;
+    margin: .6em 1em .6em;
+}
+
+ul.archive a, ul.categories a {
+	color: inherit;
+}
+
+.clearfix {
+    clear: both;
 }
 
 /* Code */
@@ -98,7 +118,7 @@ pre, pre.prettyprint
 {
 	display: block;
     overflow: visible;
-	
+
     color: #333940;
     background-color: white; /* IE */
     background-color: rgba(255,255,255, 0.6);
@@ -312,9 +332,9 @@ pre, pre.prettyprint
     color: inherit;
 }
 
-.subscribe a:hover, 
+.subscribe a:hover,
 .inline_tag_list a:hover,
-#list_archive_nav a:hover, 
+#list_archive_nav a:hover,
 #post_archive_nav a:hover,
 #comments a:hover
 {
@@ -335,7 +355,7 @@ div#dsq-pagination.dsq-pagination,
 
 #dsq-content button
 {
- 	background-color:white;  
+	background-color:white;
 }
 
 #comments a {
@@ -349,7 +369,7 @@ div#dsq-pagination.dsq-pagination,
 
 #dsq-content div.dsq-options
 {
-	margin: auto; 
+	margin: auto;
 	width: 400px;
 	padding: 2pt;
 	line-height: 12pt;
