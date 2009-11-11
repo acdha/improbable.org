@@ -7,7 +7,7 @@
 body
 {
     color: white;
-    font-family: optima;
+    font-family: Optima, "Helvetica Neue", sans-serif;
     background: #000412 url(../../img/leaves_bg_flip.jpg) no-repeat fixed left bottom;
 }
 
@@ -27,18 +27,17 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, #nav a:h
 #main
 {
     position: relative;
-    top: 38px;
+    top: 42px;
     width: 740px;
-    margin: 0 auto 4em;
+
+    margin: 0 auto;
     padding: 1em;
     color: black;
     background-color: rgb(255,239,209); /* For antique browsers */
     background-color: rgba(255,239,209,0.95);
-
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
-
     padding: 0;
     border: 2px solid #f4b73d;
 }
@@ -57,14 +56,15 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, #nav a:h
     border-bottom: 1px solid #be8513;
 }
 
-.date {
+.date
+{
     width: 4em;
 }
 
 .post .date, .quote .date, .bookmark .date
 {
-	float: left;
-	padding-left: .4em;
+    float: left;
+    padding-left: .4em;
     font-variant: small-caps;
 }
 
@@ -75,34 +75,56 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, #nav a:h
 }
 
 /* Fixups for pages where the HTML hierarchy is slightly more complicated */
-.content .inline_tag_list, .content .subscribe, #comments {
+
+.content .inline_tag_list, .content .subscribe, #comments
+{
     border-left: 1px solid #be8513;
     padding: .8em .4em;
 }
 
 .post .teaser, p.list-tease
 {
-	padding: .4em .7em;
+    padding: .4em .7em;
     font-style: italic;
 }
 
-.post .teaser {
-	background-color: #caaf84;
-	border-bottom: 1px solid #b19974;
+.post .teaser
+{
+    background-color: #caaf84;
+    border-bottom: 1px solid #b19974;
 }
 
-ul.archive, ul.categories {
+ul.archive, ul.categories
+{
     list-style-position: inside;
     list-style-type: disc;
     line-height: 1.1;
     margin: .6em 1em .6em;
 }
 
-ul.archive a, ul.categories a {
-	color: inherit;
+ul.archive a, ul.categories a
+{
+    color: inherit;
 }
 
-.clearfix {
+form.search
+{
+    margin: .4em auto;
+    padding: 0;
+    text-align: center;
+}
+
+form.search input
+{
+    border: 1px solid #513b34;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    margin: 2px auto;
+}
+
+.clearfix
+{
     clear: both;
 }
 
@@ -110,24 +132,25 @@ ul.archive a, ul.categories a {
 
 .highlight
 {
-    /* Override the default white from pygments */
+
+
+/* Override the default white from pygments */
     background-color: inherit;
 }
 
 pre, pre.prettyprint
 {
-	display: block;
+    display: block;
     overflow: visible;
-
     color: #333940;
+
     background-color: white; /* IE */
     background-color: rgba(255,255,255, 0.6);
 
     font-family: monofur, Menlo, Consolas, monospace;
     font-size: 11pt;
     line-height: 12pt;
-
-	border: none!important;
+    border: none!important;
     border-left: 1px solid #a95e08!important;
     padding: .3em .4em;
     margin: .6em 1em;
@@ -149,6 +172,10 @@ pre, pre.prettyprint
     text-shadow: #d3a63c 3px 3px 6px;
 }
 
+#main .search input[type=text]{
+    width: 33%;
+}
+
 #nav
 {
     position: fixed;
@@ -160,7 +187,6 @@ pre, pre.prettyprint
     font-size: smaller;
     margin: 0;
     padding: 0;
-
     border: 4px solid #eedbbb;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -184,23 +210,7 @@ pre, pre.prettyprint
     text-align: center;
 }
 
-#nav > form
-{
-    margin: auto;
-    padding: 0;
-    text-align: center;
-}
-
-#nav > form input
-{
-    border: 1px solid #513b34;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    margin: 4px auto;
-}
-
-#nav > form input[type=text]
+#nav form.search input[type=text]
 {
     width: 100px;
 }
@@ -216,13 +226,10 @@ pre, pre.prettyprint
 {
     display: block;
     float: right;
-
     position: relative;
     right: -5px;
     top: 3px;
-
     margin-bottom: 1em;
-
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     -webkit-border-top-left-radius: 8px;
@@ -231,49 +238,58 @@ pre, pre.prettyprint
     -moz-border-radius-bottomleft: 8px;
 }
 
-#list_archive_nav {
+#list_archive_nav
+{
     text-align: center;
-    overflow:hidden;
+    overflow: hidden;
     padding: 1em;
     border-left: 1px solid #be8513;
     margin-bottom: 3px;
 }
 
-#list_archive_nav a, #post_archive_nav a {
-	color: inherit!important;
-	text-decoration: none;
+#list_archive_nav a, #post_archive_nav a
+{
+    color: inherit!important;
+    text-decoration: none;
 }
 
-#list_archive_nav .older, a.previous {
+#list_archive_nav .older, a.previous
+{
     float: left;
 }
 
-#list_archive_nav .newer, a.next {
+#list_archive_nav .newer, a.next
+{
     float: right;
 }
 
-#list_archive_nav .nav {
-	clear: both;
-	margin-top: 1.6em;
+#list_archive_nav .nav
+{
+    clear: both;
+    margin-top: 1.6em;
 }
 
-#list_archive_nav .nav > div {
+#list_archive_nav .nav > div
+{
     float: left;
     width: 50%;
 }
 
-#list_archive_nav li {
-	list-style: none;
-	display: inline;
+#list_archive_nav li
+{
+    list-style: none;
+    display: inline;
 }
 
-#list_archive_nav li+li:before {
-	content: "· ";
+#list_archive_nav li+li:before
+{
+    content: "· ";
 }
 
-#post_archive_nav {
-	padding: 1em .3em;
-	margin: .6em 0;
+#post_archive_nav
+{
+    padding: 1em .3em;
+    margin: .6em 0;
 }
 
 #footer
@@ -315,20 +331,24 @@ pre, pre.prettyprint
 
 /* Content Elements */
 
-.inline_tag_list {
-	font-size: 95%;
+.inline_tag_list
+{
+    font-size: 95%;
 }
 
-.subscribe {
+.subscribe
+{
     font-size: small;
-    text-align:center;
+    text-align: center;
 }
 
-.subscribe li {
+.subscribe li
+{
     display: inline;
 }
 
-.subscribe a, .inline_tag_list a, #comments a {
+.subscribe a, .inline_tag_list a, #comments a
+{
     color: inherit;
 }
 
@@ -338,42 +358,51 @@ pre, pre.prettyprint
 #post_archive_nav a:hover,
 #comments a:hover
 {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
+.message {
+	color: #bb3727;
+    text-align:center;
+    margin: 1em;
+    font-weight: bold;
+    font-style: italic;
+}
 
 /* Comments */
+
 #dsq-new-post div.dsq-request-user-info,
 #dsq-content div.dsq-options,
 div#dsq-pagination.dsq-pagination,
 #dsq-content div.dsq-item-trackback
 {
-	background:none!important;
+    background: none!important;
     padding: 0;
     margin: 0;
 }
 
 #dsq-content button
 {
-	background-color:white;
+    background-color: white;
 }
 
-#comments a {
-	text-decoration: none;
+#comments a
+{
+    text-decoration: none;
 }
 
 #dsq-comments-title, #comments > p, #dsq-content .dsq-item-trackback
 {
-	text-align:center;
+    text-align: center;
 }
 
 #dsq-content div.dsq-options
 {
-	margin: auto;
-	width: 400px;
-	padding: 2pt;
-	line-height: 12pt;
-	text-align:center;
+    margin: auto;
+    width: 400px;
+    padding: 2pt;
+    line-height: 12pt;
+    text-align: center;
 }
 
 #dsq-new-post div.dsq-request-user-info
@@ -382,20 +411,22 @@ div#dsq-pagination.dsq-pagination,
     padding: 0;
 }
 
-#dsq-new-post div.dsq-request-user-info img {
+#dsq-new-post div.dsq-request-user-info img
+{
     border: 1px solid #7c6253;
 }
 
-#dsq-new-post div.dsq-request-user-info td {
-	margin: 0;
+#dsq-new-post div.dsq-request-user-info td
+{
+    margin: 0;
     padding: 0 2px;
 }
 
-#dsq-content .dsq-item-trackback input {
-	width: 50%;
+#dsq-content .dsq-item-trackback input
+{
+    width: 50%;
     border: none;
 }
-
 
 /* Decorative fluff */
 
