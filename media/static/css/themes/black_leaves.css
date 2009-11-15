@@ -22,6 +22,14 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, #nav a:h
     text-decoration: underline;
 }
 
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
 /* Key elements */
 
 #main
@@ -128,20 +136,33 @@ form.search input
     clear: both;
 }
 
+.body > p {
+    margin: .2em .3em .6em;
+    line-height: 1.1;
+}
+
+.body li {
+    margin: .3em .5em .3em 1.8em;
+}
+
+.body blockquote {
+    margin-left: .6em;
+    padding-left: .4em;
+    border-left: 1px solid blue;
+}
+
 /* Code */
 
 .highlight
 {
-
-
-/* Override the default white from pygments */
+    /* Override the default white from pygments */
     background-color: inherit;
 }
 
 pre, pre.prettyprint
 {
     display: block;
-    overflow: visible;
+    overflow: auto;
     color: #333940;
 
     background-color: white; /* IE */
@@ -362,7 +383,7 @@ pre, pre.prettyprint
 }
 
 .message {
-	color: #bb3727;
+    color: #bb3727;
     text-align:center;
     margin: 1em;
     font-weight: bold;
