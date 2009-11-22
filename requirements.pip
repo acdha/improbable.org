@@ -1,4 +1,18 @@
-mingus
-docutils
+Django==1.1.1
 
-http://effbot.org/media/downloads/Imaging-1.1.6.tar.gz
+-e git://github.com/acdha/django-basic-apps.git#egg=django-basic-apps
+-e git://github.com/acdha/django-mingus.git#egg=django-mingus
+-e git://github.com/acdha/django-sugar.git#egg=django-sugar
+
+django-debug-toolbar
+django-extensions
+
+html5lib
+chardet
+
+lxml
+PIL
+
+South==0.6.1
+
+Werkzeug
