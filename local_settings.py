@@ -15,6 +15,8 @@ DATABASE_NAME   = os.path.join(os.path.dirname(__file__), 'dev.db')
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
 STATIC_ROOT= os.path.join(MEDIA_ROOT, "static")
 
+INSTALLED_APPS = settings.INSTALLED_APPS + ["django_wysiwyg"]
+
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates'),
 ) + settings.TEMPLATE_DIRS
@@ -48,7 +50,7 @@ DEBUG_TOOLBAR_CONFIG = {
 ### django-markup
 MARKUP_CHOICES = (
     'none',
-    'markdown',
+    #'markdown',
     'restructuredtext'
 )
 
