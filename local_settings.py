@@ -53,5 +53,5 @@ MARKUP_CHOICES = (
 )
 
 
-if os.environ['HOSTNAME'].endswith("webfaction.com"):
+if os.environ.get('HOSTNAME', "").endswith("webfaction.com"):
     from deploy import *
