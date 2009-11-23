@@ -22,9 +22,7 @@
         <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all posts feed" href="/feeds/latest/">
         {% endblock %}
 
-        {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves.css" type="text/css" media="all" charset="utf-8">
-        {% endcompress %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves_min.css" type="text/css" media="all" charset="utf-8">
 
         {% disqus_dev %}
         {% block extra_head %}{% endblock %}
