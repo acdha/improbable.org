@@ -30,14 +30,11 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
-# TODO: Configure email sensibly:
-EMAIL_HOST          = 'smtp.gmail.com'
-EMAIL_PORT          = 587
-EMAIL_HOST_USER     = 'ABC'
-EMAIL_HOST_PASSWORD = 'ABC'
-EMAIL_USE_TLS       = True
+EMAIL_HOST          = '127.0.0.1'
+EMAIL_PORT          = 25
+EMAIL_HOST_USER     = ''
+EMAIL_HOST_PASSWORD = ''
 
-# TODO: Enable memcache
 CACHE_BACKEND                   = 'dummy://'
 CACHE_MIDDLEWARE_SECONDS        = 60*5
 CACHE_MIDDLEWARE_KEY_PREFIX     = 'improbable.org.'
@@ -55,3 +52,6 @@ MARKUP_CHOICES = (
     'restructuredtext'
 )
 
+
+if os.environ['HOSTNAME'].endswith("webfaction.com"):
+    from deploy import *
