@@ -304,7 +304,7 @@ pre, pre.prettyprint
 
 #list_archive_nav li+li:before
 {
-    content: "· ";
+    content: "\00B7 ";
 }
 
 #post_archive_nav
