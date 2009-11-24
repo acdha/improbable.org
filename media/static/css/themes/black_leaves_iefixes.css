@@ -1,0 +1,16 @@
+/* Workarounds for IE */
+
+#main {
+  background-color: rgb(255,239,209);
+}
+
+#footer {
+    border: solid #f4b73d 2px;
+    border-bottom: none;
+    background-color: white;
+    line-height: 1.1;
+}
+
+#logo a, #logo a:visited, #logo a:hover {
+    color:black;
+}

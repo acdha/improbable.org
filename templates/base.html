@@ -22,7 +22,16 @@
         <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all posts feed" href="/feeds/latest/">
         {% endblock %}
 
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves_min.css" type="text/css" media="all" charset="utf-8">
+        {% if DEBUG %}
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="all" charset="utf-8">
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves.css" type="text/css" media="all" charset="utf-8">
+        {% else %}
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves_min.css" type="text/css" media="all" charset="utf-8">
+        {% endif %}
+
+        <!--[if IE]>
+            <link rel="stylesheet" href="{{ STATIC_URL}}css/themes/black_leaves_iefixes.css" type="text/css" media="all">
+        <![endif]-->
 
         {% disqus_dev %}
         {% block extra_head %}{% endblock %}
