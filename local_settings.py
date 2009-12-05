@@ -3,6 +3,8 @@
 from django.conf import settings
 import os
 
+# TODO: Smart calculation of cache-buster for media
+
 DEBUG           = True
 TEMPLATE_DEBUG  = DEBUG
 COMPRESS        = False
