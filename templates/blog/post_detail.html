@@ -16,10 +16,10 @@
 
     <p id="post_archive_nav">
         {% if object.get_previous_by_publish %}
-            <a class="previous" href="{{ object.get_previous_post.get_absolute_url }}">&laquo; {{ object.get_previous_post }}</a>
+            <a class="previous" href="{{ object.get_previous_post.get_absolute_url }}">&laquo; {{ object.get_previous_post|truncatewords:"4" }}</a>
         {% endif %}
         {% if object.get_next_by_publish %}
-            <a class="next" href="{{ object.get_next_post.get_absolute_url }}">{{ object.get_next_post }} &raquo;</a>
+            <a class="next" href="{{ object.get_next_post.get_absolute_url }}">{{ object.get_next_post|truncatewords:"4" }} &raquo;</a>
         {% endif %}
     </p>
 
