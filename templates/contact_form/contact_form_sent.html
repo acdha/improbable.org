@@ -1,0 +1,16 @@
+{% extends "blog/base_blog.html" %}
+{% load blog i18n %}
+
+{% block title %}{% trans "Contact" %} | {{ block.super }}{% endblock %}
+{% block body_id %}contact{% endblock %}
+{% block body_class %}sent{% endblock %}
+
+{% block content %}
+
+<div class="content">
+    <h2>{% trans "Contact me" %}</h2>
+
+    <p>Thanks! I'll make sure to respond shortly.</p>
+</div>
+
+{% endblock %}

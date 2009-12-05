@@ -122,15 +122,6 @@ form.search
     text-align: center;
 }
 
-form.search input
-{
-    border: 1px solid #513b34;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    margin: 2px auto;
-}
-
 .clearfix
 {
     clear: both;
@@ -149,6 +140,31 @@ form.search input
     margin-left: .6em;
     padding-left: .4em;
     border-left: 1px solid blue;
+}
+
+/* Forms */
+
+input, textarea
+{
+    border: 1px solid #513b34;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    margin: 2px auto;
+}
+
+#form-error {
+    color: #cb2c2f;
+    margin: 1em auto;
+    padding: 0 1em;
+    font-weight: bold;
+    line-height:1.1;
+}
+
+#form-error ul {
+    font-weight: normal;
+    list-style-type: square;
+    margin-left: 2em;
 }
 
 /* Code */
@@ -447,6 +463,53 @@ div#dsq-pagination.dsq-pagination,
 {
     width: 50%;
     border: none;
+}
+
+
+/* Contact Form */
+
+#contact .content {
+    padding: .5em;
+}
+
+#contact form {
+	overflow:auto;
+	width: 100%;
+}
+
+#contact form p {
+    clear:both;
+}
+
+#contact form p * {
+	float: left;
+}
+
+#contact form label {
+	width: 8em;
+	font-weight:bold;
+	text-align:right;
+	padding-right: 1em;
+	margin-bottom:.5em;
+}
+
+#contact form label:after {
+    content: ":";
+}
+
+#contact input {
+	float: left;
+	margin-left: 0;
+}
+
+#contact form textarea {
+	width: 40em;
+	height: 16em;
+}
+
+#contact form input[type=submit] {
+	clear: both;
+    margin: 1em 1em 1em 13em;
 }
 
 /* Decorative fluff */
