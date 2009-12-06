@@ -221,8 +221,9 @@ pre, pre.prettyprint
     background-color: #eedbbb;
     font-size: smaller;
     margin: 0;
-    padding: 0;
-    border: 4px solid #eedbbb;
+    padding-left: 2pt;
+    border: 2px solid #caaf84;
+    border-right: none;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     -webkit-border-top-left-radius: 8px;
@@ -231,17 +232,29 @@ pre, pre.prettyprint
     -moz-border-radius-topleft: 8px;
 }
 
-#nav h4
+#nav h4, #nav .navbar-one
 {
     clear: both;
     font-size: 11pt;
-    margin-top: .5em;
-    margin-bottom: .3em;
-    margin-left: .3em;
+}
+
+#nav ul, #nav .navbar-one li {
+    margin: .3em .2em;
+}
+
+#nav .navbar-one {
+    font-weight: bold;
+}
+
+#nav .navbar-one li {
+    list-style-type: none;
+    margin-left: 0;
 }
 
 #nav p
 {
+    margin-top: .5em;
+    margin-bottom: .5em;
     text-align: center;
 }
 
@@ -252,9 +265,10 @@ pre, pre.prettyprint
 
 #nav li
 {
-    margin-left: .5em;
+	margin-bottom: .1em;
+    margin-left: 1.2em;
     list-style-type: square;
-    list-style-position: inside;
+    list-style-position: outside;
 }
 
 #avatar img

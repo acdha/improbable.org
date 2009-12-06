@@ -43,17 +43,21 @@
                 {{ BLOG_SETTINGS.about }}
             </p>
 
-            {% cache 3600 "base.profiles" %}
+            {% cache 3600 "base.navbars" %}
+            {% navbars %}
+            {% endcache %}
+
+            {# {% cache 3600 "base.profiles" %} #}
             {% get_elsewhere_profiles as profiles %}
             {% if profiles %}
             <h4>{% trans "Elsewhere" %}</h4>
-            <ul>
+            <ul class="profiles">
                 {% for item in profiles %}
-                <li><a href="{{ item.url }}" rel="me" title="{{ item.name }}">{{ item.name }}</a></li>
+                <li class="cat-{{ item.category.title|slugify }}"><a href="{{ item.url }}" rel="me" title="{{ item.name }}">{{ item.name }}</a></li>
                 {% endfor %}
             </ul>
             {% endif %}
-            {% endcache %}
+            {# {% endcache %} #}
 
             {% cache 3600 "base.blogroll" %}
             {% get_blogroll 10 as blogroll %}
