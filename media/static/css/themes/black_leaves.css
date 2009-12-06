@@ -1,4 +1,5 @@
 /* @override http://127.0.0.1:8000/media/static/css/themes/black_leaves.css */
+
 /* Baseline styles: */
 
 body
@@ -469,20 +470,20 @@ div#dsq-pagination.dsq-pagination,
     padding: .5em;
 }
 
-#contact form {
+#contact #main form {
 	overflow:auto;
 	width: 100%;
 }
 
-#contact form p {
+#contact #main form p {
     clear:both;
 }
 
-#contact form p * {
+#contact #main form p * {
 	float: left;
 }
 
-#contact form label {
+#contact #main form label {
 	width: 8em;
 	font-weight:bold;
 	text-align:right;
@@ -490,23 +491,23 @@ div#dsq-pagination.dsq-pagination,
 	margin-bottom:.5em;
 }
 
-#contact form label:after {
+#contact #main form label:after {
     content: ":";
 }
 
-#contact input {
+#contact #main input {
 	float: left;
 	margin-left: 0;
 }
 
-#contact form textarea {
+#contact #main form textarea {
 	width: 40em;
 	height: 16em;
 }
 
-#contact form input[type=submit] {
+#contact #main form input[type=submit] {
 	clear: both;
-    margin: 1em 1em 1em 13em;
+    	margin: 1em 1em 1em 13em;
 }
 
 /* Decorative fluff */
