@@ -1,4 +1,6 @@
-/* @override http://127.0.0.1:8000/media/static/css/themes/black_leaves.css */
+/* @override
+	http://127.0.0.1:8000/media/static/css/themes/black_leaves.css
+*/
 
 /* Baseline styles: */
 
@@ -20,12 +22,19 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, #nav a:h
     text-decoration: underline;
 }
 
-ul {
+ul
+{
     list-style-type: disc;
 }
 
-ol {
+ol
+{
     list-style-type: decimal;
+}
+
+q
+{
+    quotes: '„' '“' '»' '«';
 }
 
 /* Key elements */
@@ -35,11 +44,13 @@ ol {
     position: relative;
     top: 42px;
     width: 740px;
-
     margin: 0 auto;
     padding: 1em;
     color: black;
-    background-color: rgb(255,239,209); /* For antique browsers */
+    background-color: rgb(255,239,209);
+
+
+/* For antique browsers */
     background-color: rgba(255,239,209,0.95);
     border-radius: 8px;
     -webkit-border-radius: 8px;
@@ -74,10 +85,29 @@ ol {
     font-variant: small-caps;
 }
 
-.post .body, .bookmark .body, .post .teaser, .quote blockquote
+.post_list .body, .post_list .teaser
 {
     border-left: 1px solid #be8513;
     padding: .7em .4em;
+}
+
+.quote blockquote:before
+{
+    content: "“";
+    float: left;
+    font: 62pt "Hoefler Text", Zapfino;
+    color: #caaf84;
+}
+
+.quote .source
+{
+    text-align: right;
+}
+
+.quote blockquote
+{
+    font-style: italic;
+    line-height: 1.1;
 }
 
 /* Fixups for pages where the HTML hierarchy is slightly more complicated */
@@ -125,19 +155,15 @@ form.search
     clear: both;
 }
 
-.body > p {
+.body > p
+{
     margin: .2em .3em .6em;
     line-height: 1.1;
 }
 
-.body li {
+.body li
+{
     margin: .3em .5em .3em 1.8em;
-}
-
-.body blockquote {
-    margin-left: .6em;
-    padding-left: .4em;
-    border-left: 1px solid blue;
 }
 
 /* Forms */
@@ -151,15 +177,17 @@ input, textarea
     margin: 2px auto;
 }
 
-#form-error {
+#form-error
+{
     color: #cb2c2f;
     margin: 1em auto;
     padding: 0 1em;
     font-weight: bold;
-    line-height:1.1;
+    line-height: 1.1;
 }
 
-#form-error ul {
+#form-error ul
+{
     font-weight: normal;
     list-style-type: square;
     margin-left: 2em;
@@ -169,7 +197,9 @@ input, textarea
 
 .highlight
 {
-    /* Override the default white from pygments */
+
+
+/* Override the default white from pygments */
     background-color: inherit;
 }
 
@@ -178,10 +208,11 @@ pre, pre.prettyprint
     display: block;
     overflow: auto;
     color: #333940;
+    background-color: white;
 
-    background-color: white; /* IE */
+
+/* IE */
     background-color: rgba(255,255,255, 0.6);
-
     font-family: monofur, Menlo, Consolas, monospace;
     font-size: 11pt;
     line-height: 12pt;
@@ -207,7 +238,8 @@ pre, pre.prettyprint
     text-shadow: #d3a63c 3px 3px 6px;
 }
 
-#main .search input[type=text]{
+#main .search input[type=text]
+{
     width: 33%;
 }
 
@@ -238,15 +270,18 @@ pre, pre.prettyprint
     font-size: 11pt;
 }
 
-#nav ul, #nav .navbar-one li {
+#nav ul, #nav .navbar-one li
+{
     margin: .3em .2em;
 }
 
-#nav .navbar-one {
+#nav .navbar-one
+{
     font-weight: bold;
 }
 
-#nav .navbar-one li {
+#nav .navbar-one li
+{
     list-style-type: none;
     margin-left: 0;
 }
@@ -265,7 +300,7 @@ pre, pre.prettyprint
 
 #nav li
 {
-	margin-bottom: .1em;
+    margin-bottom: .1em;
     margin-left: 1.2em;
     list-style-type: square;
     list-style-position: outside;
@@ -410,9 +445,10 @@ pre, pre.prettyprint
     text-decoration: underline;
 }
 
-.message {
+.message
+{
     color: #bb3727;
-    text-align:center;
+    text-align: center;
     margin: 1em;
     font-weight: bold;
     font-style: italic;
@@ -477,51 +513,59 @@ div#dsq-pagination.dsq-pagination,
     border: none;
 }
 
-
 /* Contact Form */
 
-#contact .content {
+#contact .content
+{
     padding: .5em;
 }
 
-#contact #main form {
-	overflow:auto;
-	width: 100%;
+#contact #main form
+{
+    overflow: auto;
+    width: 100%;
 }
 
-#contact #main form p {
-    clear:both;
+#contact #main form p
+{
+    clear: both;
 }
 
-#contact #main form p * {
-	float: left;
+#contact #main form p *
+{
+    float: left;
 }
 
-#contact #main form label {
-	width: 8em;
-	font-weight:bold;
-	text-align:right;
-	padding-right: 1em;
-	margin-bottom:.5em;
+#contact #main form label
+{
+    width: 8em;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 1em;
+    margin-bottom: .5em;
 }
 
-#contact #main form label:after {
+#contact #main form label:after
+{
     content: ":";
 }
 
-#contact #main input {
-	float: left;
-	margin-left: 0;
+#contact #main input
+{
+    float: left;
+    margin-left: 0;
 }
 
-#contact #main form textarea {
-	width: 40em;
-	height: 16em;
+#contact #main form textarea
+{
+    width: 40em;
+    height: 16em;
 }
 
-#contact #main form input[type=submit] {
-	clear: both;
-    	margin: 1em 1em 1em 13em;
+#contact #main form input[type=submit]
+{
+    clear: both;
+    margin: 1em 1em 1em 13em;
 }
 
 /* Decorative fluff */
