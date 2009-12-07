@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* @override http://127.0.0.1:8000/media/static/css/themes/black_leaves.css */
 
 /* Baseline styles: */
@@ -41,11 +40,11 @@ q
 }
 
 .inline li:after {
-	content: ",";
+    content: ",";
 }
 
 .inline li:last-child:after {
-	content: "";
+    content: "";
 }
 
 /* Key elements */
@@ -673,5 +672,4 @@ div#dsq-pagination.dsq-pagination,
         color: #b3976c;
         font-style: italic;
     }
-
 }
