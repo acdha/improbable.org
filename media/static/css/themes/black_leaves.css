@@ -36,6 +36,18 @@ q
     quotes: '„' '“' '»' '«';
 }
 
+.inline li {
+    display: inline;
+}
+
+.inline li:after {
+	content: ",";
+}
+
+.inline li:last-child:after {
+	content: "";
+}
+
 /* Key elements */
 
 #main
@@ -108,7 +120,7 @@ q
 
 /* Fixups for pages where the HTML hierarchy is slightly more complicated */
 
-.content .inline_tag_list, .content .subscribe, #comments
+.content .body, .content .teaser, .content .source, .content .related, .content .tags,  .content .subscribe, #comments
 {
     border-left: 1px solid #be8513;
     padding: .8em .4em;
@@ -124,6 +136,10 @@ q
 {
     background-color: #caaf84;
     border-bottom: 1px solid #b19974;
+}
+
+.tags ul {
+    margin-left: .7em;
 }
 
 ul.archive, ul.categories
@@ -187,6 +203,10 @@ input, textarea
     font-weight: normal;
     list-style-type: square;
     margin-left: 2em;
+}
+
+#contact form h2 {
+    margin-bottom: .6em;
 }
 
 /* Code */
@@ -403,11 +423,6 @@ pre, pre.prettyprint
 }
 
 /* Content Elements */
-
-.inline_tag_list
-{
-    font-size: 95%;
-}
 
 .subscribe
 {
