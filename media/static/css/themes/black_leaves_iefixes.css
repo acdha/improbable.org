@@ -1,16 +1,32 @@
 /* Workarounds for IE */
 
-#main {
-  background-color: rgb(255,239,209);
+#main
+{
+    background-color: rgb(255,239,209);
 }
 
-#footer {
+#footer
+{
     border: solid #f4b73d 2px;
     border-bottom: none;
     background-color: white;
     line-height: 1.1;
 }
 
-#logo a, #logo a:visited, #logo a:hover {
-    color:black;
+#nav
+{
+    border: 2px solid #f4b73d;
+    border-right: none;
+}
+
+/* IE 7 doesn't grok inherit */
+
+#logo a, #logo a:visited, #logo a:hover, #main h2 a
+{
+    color: black;
+}
+
+#nav a, #nav a:visited
+{
+    color: #554c30;
 }
