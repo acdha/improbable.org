@@ -10,10 +10,11 @@
         <meta name="keywords" content="{{ BLOG_SETTINGS.meta_keywords }}">
         <meta name="description" content="{{ BLOG_SETTINGS.meta_description }}">
         <meta name="author" content="{{ BLOG_SETTINGS.author_name }}">
+        <meta http-equiv="Content-Style-Type" content="text/css">
         {% endblock %}
 
         <meta name="copyright" content="{{ BLOG_SETTINGS.copyright }}">
-        <link rel="shortcut icon" href="{{ STATIC_URL }}imgs/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/x-icon">
 
         {% block rss %}
         <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} main rss feed" href="{{ BLOG_SETTINGS.rss_url }}">

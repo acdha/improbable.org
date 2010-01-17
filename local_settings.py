@@ -5,7 +5,7 @@ import os
 
 # TODO: Smart calculation of cache-buster for media
 
-DEBUG           = True
+DEBUG           = False
 TEMPLATE_DEBUG  = DEBUG
 COMPRESS        = False
 LOCAL_DEV       = True
