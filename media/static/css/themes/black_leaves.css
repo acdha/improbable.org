@@ -37,10 +37,11 @@ q
 
 .inline li {
     display: inline;
+    margin-right: .5em;
 }
 
-.inline li:after {
-    content: ",";
+.tag.inline li:after {
+    content: ", ";
 }
 
 .inline li:last-child:after {
@@ -119,7 +120,7 @@ q
 
 /* Fixups for pages where the HTML hierarchy is slightly more complicated */
 
-.content .body, .content .teaser, .content .source, .content .related, .content .tags,  .content .subscribe, #comments
+.content .body, .content .teaser, .content .quote .source, .content .related, .content .tags,  .content .subscribe, #comments
 {
     border-left: 1px solid #be8513;
     padding: .8em .4em;
