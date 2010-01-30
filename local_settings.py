@@ -75,4 +75,4 @@ MARKUP_CHOICES = (
 
 
 if os.environ.get('HOSTNAME', "").endswith("webfaction.com"):
-    from deploy import *
+    from webfaction_settings import *
