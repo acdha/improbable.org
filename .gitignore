@@ -1,2 +1,3 @@
 *.py[co]
 dev.db
+*_settings.py

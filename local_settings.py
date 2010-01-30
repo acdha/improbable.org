@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+# TODO: Figure out what mingus is doing which prevents us from using the recipe from
+# http://code.djangoproject.com/wiki/SplitSettings
+
 from django.conf import settings
 import os
 from urlparse import urljoin
