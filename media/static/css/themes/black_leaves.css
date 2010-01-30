@@ -1,4 +1,4 @@
-/* @override http://127.0.0.1:8000/media/static/css/themes/black_leaves.css */
+
 
 /* Baseline styles: */
 
@@ -54,7 +54,7 @@ q
 {
     position: relative;
     top: 42px;
-    width: 740px;
+    width: 750px;
     margin: 0 auto;
     padding: 1em;
     color: black;
@@ -581,96 +581,30 @@ div#dsq-pagination.dsq-pagination,
     -moz-box-shadow: -8px 2px 6px rgba(0,0,0,.5);
 }
 
-@media all and (max-width:980px) and (min-width:850px) {
+/* Tighten spacing for modest-sized displays */
+@media screen and (max-width:1000px) {
     #main {
-        margin-left: 2em;
-        width: 700px;
-    }
+		margin-left: 50px;
+		width: 650px;
+	}
 }
 
-@media all and (max-width:850px) {
-    body {
-        color: black;
-        background: rgb(255,239,209); /* No alpha transparency for small devices */
-        font-size: 10pt;
-    }
+@media screen and (max-width:940px) {
+    #main {
+		margin-left: 20px;
+        width: 600px;
+	}
+}
 
-    /* Fluff reset */
-    #main, #footer, #nav
-    {
-        position:relative;
-        top: 0;
-        float: left;
-        clear: both;
+/* Pin navigation so small screens get scrollbars rather than overlapping */
+@media screen and (max-width:740px) {
+    #main {
+		margin-left: 10px;
+	}
 
-        width: 100%;
-
-        background-color:inherit;
-
-        margin: 0;
-        margin-bottom: 1em;
-        padding: 0;
-
-        border: none;
-    }
-
-    /* Fluff reset */
-    #main, #footer, #nav, #nav img
-    {
-        box-shadow: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-
-        border-radius: 0;
-        -webkit-border-radius: 0;
-        -moz-border-radius: 0;
-    }
-
-    #nav h4, #navbars li {
-        font-size: 12pt;
-    }
-
-    #nav #about {
-        overflow:hidden;
-        margin: 0;
-        width: 100px;
-        font-size: smaller;
-        padding-bottom:.1em;
-    }
-
-    #blogroll, #archive, #nav_categories {
-        display: none;
-    }
-
-    #about {
-        float: right;
-    }
-
-    #navbars, #search, #profiles {
-        float: left;
-        padding: 0;
-        margin-right: .8em;
-        margin-top: .3em;
-    }
-
-    #search h4 {
-        display: none;
-    }
-
-    #profiles li {
-        list-style-position: inside;
-        margin:0;
-    }
-
-    #logo {
-        display: none;
-    }
-
-    #footer {
-        float: none;
-        width: 28em;
-        margin: auto;
-        color: #b3976c;
-        font-style: italic;
-    }
+    #nav {
+    	position: absolute;
+    	left: 630px;
+    	z-index:5;
+	}
 }

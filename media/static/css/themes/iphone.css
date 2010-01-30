@@ -1,0 +1,130 @@
+/* @override http://127.0.0.1:8000/media/css/themes/black_leaves.css */
+
+body {
+    color: #000;
+    background: #fff; /* No alpha transparency for small devices */
+    font-size: 10pt;
+    font-family: "Lucida Grande", sans-serif;
+    overflow:auto;
+}
+
+h1 {
+    font-size: 14pt;
+}
+
+h2 {
+    font-size: 12pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.inline li, #list_archive_nav li {
+    display: inline-block;
+    padding-right: .5em;
+}
+
+#blogroll, #archive, #nav_categories, #search h4, #logo, #footer img {
+    display: none;
+}
+
+#main, #footer, #nav
+{
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+#nav
+{
+    text-align:center;
+    background-color: #e8e8e8;
+
+    background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#bbb), color-stop(0.3, #e8e8e8), color-stop(0.7, #e8e8e8));
+
+    border-bottom: 1px solid #ccc;
+    -webkit-box-shadow: 4px 3px 12px rgba(0,0,0,.4);
+    overflow:hidden;
+    padding-bottom: 4px;
+    -webkit-border-radius: 2px;
+}
+
+#about {
+    text-align:center;
+    float: right;
+    overflow:hidden;
+    margin: 0;
+    width: 125px;
+    font-size: smaller;
+    padding-bottom:.1em;
+}
+
+#about img {
+    border-left: solid #bbb 1px;
+    border-bottom: solid #bbb 1px;
+    float: right;
+    -webkit-border-bottom-left-radius:4px;
+}
+
+#navbars, #search, #profiles {
+    margin-top: .25em;
+    margin-bottom:.5em;
+}
+
+#navbars ul {
+    font-size: 12pt;
+    font-weight:bold;
+    text-align:center;
+}
+
+#profiles h4 {
+    text-align: left;
+}
+
+#profiles h4:after {
+    content: ":";
+}
+
+#navbars li, #profiles li {
+    padding-right: .5em;
+    display: inline-block;
+}
+
+#footer {
+    text-align:center;
+    width: 225px;
+    margin: auto;
+    font-size: smaller;
+    font-style: italic;
+}
+
+.post_list > div {
+    margin-bottom: 1em;
+}
+
+.date,
+.post > h2,
+.post > h3,
+.quote > h2,
+.quote > h3,
+.bookmark > h2,
+.bookmark > h3 {
+    line-height:1.5;
+    font-size: 11pt;
+    padding-right: .6em;
+
+    background: #a6c3e5;
+}
+
+.date {
+    float: left;
+}
+
+.post_list > * > h2 > a {
+    color: inherit;
+    text-decoration: inherit;
+}
