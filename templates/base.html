@@ -1,5 +1,5 @@
 {% spaceless %}
-{% load disqus_tags flatblock_tags cache navbar generic_content blog compress analytics elsewhere feeds i18n archive %}
+{% load disqus_tags flatblock_tags cache navbar generic_content blog analytics elsewhere feeds i18n archive %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
     "http://www.w3.org/TR/html4/strict.dtd">
 {% endspaceless %}<html lang="en">
@@ -22,11 +22,14 @@
         <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all posts feed" href="/feeds/latest/">
         {% endblock %}
 
-        {% compress css %}
+        {% if DEBUG or LOCAL_DEV %}
             <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="all" charset="utf-8">
             <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves.css" type="text/css" media="screen and (min-device-width: 481px)" charset="utf-8">
             <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/iphone.css" type="text/css" media="only screen and (max-device-width: 480px)" charset="utf-8">
-        {% endcompress %}
+        {% else %}
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves_min.css" type="text/css" media="screen and (min-device-width: 481px)" charset="utf-8">
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/iphone_min.css" type="text/css" media="only screen and (max-device-width: 480px)" charset="utf-8">
+        {% endif %}
 
         <!--[if IE]>
             <link rel="stylesheet" href="{{ STATIC_URL}}css/themes/black_leaves_iefixes.css" type="text/css" media="all">
@@ -42,7 +45,6 @@
         <div id="nav">
             <div id="about">
                 <a href="/about/"><img src="{{ STATIC_URL }}img/cycling_tn.jpg" alt="Chris' portrait" height="86" width="105"></a>
-
                 {{ BLOG_SETTINGS.about }}
             </div>
 
