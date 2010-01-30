@@ -48,6 +48,9 @@ CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
 
 INSTALLED_APPS = tuple(app for app in settings.INSTALLED_APPS if app not in ('request', 'compressor'))
 TEMPLATE_CONTEXT_PROCESSORS = settings.TEMPLATE_CONTEXT_PROCESSORS + ('sugar.context_processors.site_settings',)
+MIDDLEWARE_CLASSES = tuple(
+        i for i in settings.MIDDLEWARE_CLASSES if not i.startswith("request.")
+)
 
 # NOTE: Your IP must be in this file to use django-debug-toolbar:
 INTERNAL_IPS = ('127.0.0.1',)
