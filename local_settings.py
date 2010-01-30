@@ -2,6 +2,7 @@
 
 from django.conf import settings
 import os
+from urlparse import urljoin
 
 # TODO: Smart calculation of cache-buster for media
 
@@ -16,8 +17,7 @@ DATABASE_NAME   = os.path.join(os.path.dirname(__file__), 'dev.db')
 
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
 STATIC_ROOT= os.path.join(MEDIA_ROOT, "static")
-
-INSTALLED_APPS = settings.INSTALLED_APPS + ["django_wysiwyg"]
+STATIC_URL = urljoin(settings.MEDIA_URL, "static/")
 
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates'),
