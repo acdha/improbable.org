@@ -23,16 +23,16 @@
         {% endblock %}
 
         {% if DEBUG or LOCAL_DEV %}
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" media="all" charset="utf-8">
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves.css" type="text/css" media="screen and (min-device-width: 481px)" charset="utf-8">
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/iphone.css" type="text/css" media="only screen and (max-device-width: 480px)" charset="utf-8">
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css?{{ MEDIA_KEY }}" type="text/css" media="all" charset="utf-8">
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves.css?{{ MEDIA_KEY }}" type="text/css" media="screen and (min-device-width: 481px)" charset="utf-8">
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/iphone.css?{{ MEDIA_KEY }}" type="text/css" media="only screen and (max-device-width: 480px)" charset="utf-8">
         {% else %}
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves_min.css" type="text/css" media="screen and (min-device-width: 481px)" charset="utf-8">
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/iphone_min.css" type="text/css" media="only screen and (max-device-width: 480px)" charset="utf-8">
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves_min.css?{{ MEDIA_KEY }}" type="text/css" media="screen and (min-device-width: 481px)" charset="utf-8">
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/iphone_min.css?{{ MEDIA_KEY }}" type="text/css" media="only screen and (max-device-width: 480px)" charset="utf-8">
         {% endif %}
 
         <!--[if IE]>
-            <link rel="stylesheet" href="{{ STATIC_URL}}css/themes/black_leaves_iefixes.css" type="text/css" media="all">
+            <link rel="stylesheet" href="{{ STATIC_URL}}css/themes/black_leaves_iefixes.css?{{ MEDIA_KEY }}" type="text/css" media="all">
         <![endif]-->
 
         <meta name="viewport" content="width=device-width">
@@ -144,7 +144,7 @@
         {% endcache %}
 
         {% block extra_base %}
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
         jQuery(function($) {
             $("head").append(unescape('%3Clink%20rel%3D%22stylesheet%22%20href%3D%22{{ STATIC_URL }}css%2Fprettify.css%22%20type%3D%22text%2Fcss%22%20media%3D%22screen%22%20title%3D%22no%20title%22%20charset%3D%22utf-8%22%3E'));

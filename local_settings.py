@@ -1,11 +1,21 @@
 # -*- coding: utf-8 -*-
 
-# TODO: Figure out what mingus is doing which prevents us from using the recipe from
-# http://code.djangoproject.com/wiki/SplitSettings
+# TODO: Figure out what mingus is doing which prevents us from using the
+# recipe from http://code.djangoproject.com/wiki/SplitSettings
+
+from urlparse import urljoin
+import logging
+import os
 
 from django.conf import settings
-import os
-from urlparse import urljoin
+
+try:
+    import subprocess
+    git_rev = subprocess.Popen(("git", "rev-parse", "HEAD"), stdout=subprocess.PIPE).communicate()[0]
+    MEDIA_KEY = git_rev.strip()
+except (OSError, IOError), e:
+    logging.warning("Unable to set MEDIA_KEY from Git (will fall back to %s mtime): %s", __file__, e)
+    MEDIA_KEY = os.stat(__file__).st_mtime
 
 LOCAL_DEV       = True
 DEBUG           = False
@@ -22,6 +32,7 @@ TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates'),
 ) + settings.TEMPLATE_DIRS
 
+# SECURITY NOTE: Change these in your production config!
 SECRET_KEY          = '6es\f,@F-2O4}{yY1w&mzTh!NsSm\me'
 HONEYPOT_FIELD_NAME = 'Jung24_avers'
 
@@ -46,8 +57,13 @@ CACHE_MIDDLEWARE_SECONDS        = 60 * 5
 CACHE_MIDDLEWARE_KEY_PREFIX     = 'improbable.org.'
 CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
 
-INSTALLED_APPS = tuple(app for app in settings.INSTALLED_APPS if app not in ('request', 'compressor'))
+# Turn on some helpful template variables:
 TEMPLATE_CONTEXT_PROCESSORS = settings.TEMPLATE_CONTEXT_PROCESSORS + ('sugar.context_processors.site_settings',)
+
+# I dislike the django-request performance anti-pattern, so we'll disable it:
+INSTALLED_APPS = tuple(
+    app for app in settings.INSTALLED_APPS if app not in ('request', 'compressor')
+)
 MIDDLEWARE_CLASSES = tuple(
         i for i in settings.MIDDLEWARE_CLASSES if not i.startswith("request.")
 )
@@ -78,7 +94,6 @@ MARKUP_CHOICES = (
     'textile',
     'restructuredtext'
 )
-
 
 if os.environ.get('HOSTNAME', "").endswith("webfaction.com"):
     from webfaction_settings import *
