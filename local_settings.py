@@ -11,7 +11,11 @@ from django.conf import settings
 
 try:
     import subprocess
-    git_rev = subprocess.Popen(("git", "rev-parse", "HEAD"), stdout=subprocess.PIPE).communicate()[0]
+    git_rev = subprocess.Popen(
+        ("git", "rev-parse", "HEAD"),
+        stdout=subprocess.PIPE,
+        cwd=os.path.dirname(__file__),
+    ).communicate()[0]
     MEDIA_KEY = git_rev.strip()
 except (OSError, IOError), e:
     logging.warning("Unable to set MEDIA_KEY from Git (will fall back to %s mtime): %s", __file__, e)
