@@ -1,13 +1,10 @@
-# -*- coding: utf-8 -*-
-
-# TODO: Figure out what mingus is doing which prevents us from using the
-# recipe from http://code.djangoproject.com/wiki/SplitSettings
-
 from urlparse import urljoin
 import logging
 import os
 
-from django.conf import settings
+execfile("/Users/ctadams/Projects/django-mingus/mingus/settings.py")
+# mingus = __import__("mingus")
+# execfile(os.path.join(os.path.dirname(mingus.__file__), "settings.py"))
 
 try:
     import subprocess
@@ -28,13 +25,13 @@ TEMPLATE_DEBUG  = DEBUG
 #sorl-thumbnail
 THUMBNAIL_DEBUG = DEBUG
 
-MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'media')
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), '..', 'media')
 STATIC_ROOT= os.path.join(MEDIA_ROOT, "static")
-STATIC_URL = urljoin(settings.MEDIA_URL, "static/")
+STATIC_URL = urljoin(MEDIA_URL, "static/")
 
-TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates'),
-) + settings.TEMPLATE_DIRS
+TEMPLATE_DIRS += (
+    os.path.join(os.path.dirname(__file__), '..', 'templates'),
+)
 
 # SECURITY NOTE: Change these in your production config!
 SECRET_KEY          = '6es\f,@F-2O4}{yY1w&mzTh!NsSm\me'
@@ -62,14 +59,14 @@ CACHE_MIDDLEWARE_KEY_PREFIX     = 'improbable.org.'
 CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
 
 # Turn on some helpful template variables:
-TEMPLATE_CONTEXT_PROCESSORS = settings.TEMPLATE_CONTEXT_PROCESSORS + ('sugar.context_processors.site_settings',)
+TEMPLATE_CONTEXT_PROCESSORS += ('sugar.context_processors.site_settings',)
 
 # I dislike the django-request performance anti-pattern, so we'll disable it:
 INSTALLED_APPS = tuple(
-    app for app in settings.INSTALLED_APPS if app not in ('request', 'compressor')
+    app for app in INSTALLED_APPS if app not in ('request', 'compressor')
 )
 MIDDLEWARE_CLASSES = tuple(
-        i for i in settings.MIDDLEWARE_CLASSES if not i.startswith("request.")
+        i for i in MIDDLEWARE_CLASSES if not i.startswith("request.")
 )
 
 # NOTE: Your IP must be in this file to use django-debug-toolbar:
@@ -98,6 +95,3 @@ MARKUP_CHOICES = (
     'textile',
     'restructuredtext'
 )
-
-if os.environ.get('HOSTNAME', "").endswith("webfaction.com"):
-    from webfaction_settings import *
