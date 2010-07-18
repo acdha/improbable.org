@@ -38,6 +38,13 @@
         <meta name="viewport" content="width=device-width">
         <meta name="viewport" content="initial-scale=1.0">
 
+        {% block analytics %}
+        <!-- django-google-analytics -->
+        {% cache 7200 "base.analytics" %}
+        {% analytics_async %}
+        {% endcache %}
+        {% endblock analytics %}
+
         {% disqus_dev %}
         {% block extra_head %}{% endblock %}
     </head>
@@ -138,10 +145,6 @@
             {% flatblock "footer" 3600 "flatblocks/bare.html" %}
             {% endcache %}
         </div>
-
-        {% cache 7200 "base.analytics" %}
-        {% analytics %}
-        {% endcache %}
 
         {% block extra_base %}
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
