@@ -3,7 +3,7 @@
 import os
 import sys
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'mingus.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'imp_settings.prod'
 
 from django.conf import settings
 
