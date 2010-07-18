@@ -7,7 +7,6 @@
 {% block content_title %}{% endblock %}
 
 {% block content %}
-
     <div class="post_list">
         {% for object in object_list %}
             {% ifequal object.content_type.name "post" %}
@@ -24,43 +23,41 @@
         {% endfor %}
     </div>
 
-    {% cache 7200 "list_archive_nav" %}
-    <div id="list_archive_nav">
-        {% if has_next %}
-            <p class="older">
-                <a href="/page/{{ next }}">&laquo; Older posts</a>
-            </p>
-        {% endif %}
+    {% cache 7200 "list_archive_nav" request.path %}
+        <div id="list_archive_nav">
+            {% if has_next %}
+                <p class="older">
+                    <a href="/page/{{ next }}/">&laquo; Older posts</a>
+                </p>
+            {% endif %}
 
-        {% if has_previous %}
-            <p class="newer">
-                <a href="/page/{{ previous }}">Newer posts  &raquo;</a>
-            </p>
-        {% endif %}
+            {% if has_previous %}
+                <p class="newer">
+                    <a href="/page/{{ previous }}/">Newer posts  &raquo;</a>
+                </p>
+            {% endif %}
 
-        <div class="nav">
-            <div class="by_date">
-                {% get_post_archive_years as years %}
-                <h4>{% trans "Archive" %}</h4>
-                <ul>
-                  {% for date in years %}
-                      <li><a href="{% url blog_archive_year date|date:"Y" %}" title="{{ date|date:"Y" }}">{{ date|date:"Y" }}</a></li>
-                  {% endfor %}
-                </ul>
-            </div>
+            <div class="nav">
+                <div class="by_date">
+                    {% get_post_archive_years as years %}
+                    <h4>{% trans "Archive" %}</h4>
+                    <ul>
+                      {% for date in years %}
+                          <li><a href="{% url blog_archive_year date|date:"Y" %}" title="{{ date|date:"Y" }}">{{ date|date:"Y" }}</a></li>
+                      {% endfor %}
+                    </ul>
+                </div>
 
-            <div class="by_category">
-                <h4><a href="{% url blog_category_list %}">{% trans "Categories" %}</a></h4>
-                <ul>
-                    {% get_blog_categories as category_list %}
-                    {% for category in category_list %}
-                        <li><a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.title }}">{{ category.title }}</a></li>
-                    {% endfor %}
-                </ul>
+                <div class="by_category">
+                    <h4><a href="{% url blog_category_list %}">{% trans "Categories" %}</a></h4>
+                    <ul>
+                        {% get_blog_categories as category_list %}
+                        {% for category in category_list %}
+                            <li><a href="{% url basic.blog.views.category_detail category.slug %}" title="{{ category.title }}">{{ category.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
     {% endcache %}
-
-
 {% endblock %}
