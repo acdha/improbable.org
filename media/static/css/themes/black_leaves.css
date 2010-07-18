@@ -1,4 +1,6 @@
+@charset "UTF-8";
 
+@import url("http://fonts.googleapis.com/css?family=Nobile:regular,bold|Inconsolata");
 
 /* Baseline styles: */
 
@@ -75,15 +77,20 @@ q
 .bookmark > h2,
 .bookmark > h3
 {
-    line-height: 18pt;
+    line-height: 28px;
     background-color: #f4b73d;
+    font-size: 12pt;
+    font-family: 'Nobile', Arial, sans-serif;
     font-weight: bold;
     border-bottom: 1px solid #be8513;
+    vertical-align: baseline;
 }
 
 .date
 {
-    width: 4em;
+    font-size: 8pt;
+    line-height: 28px; /* This should match the definition above so the bottom border matches */
+    width: 55px;
 }
 
 .post .date, .quote .date, .bookmark .date
@@ -211,11 +218,8 @@ input, textarea
 
 /* Code */
 
-.highlight
-{
-
-
-/* Override the default white from pygments */
+.highlight {
+    /* Override the default white from pygments */
     background-color: inherit;
 }
 
@@ -227,7 +231,7 @@ pre, pre.prettyprint
 
     background-color: white; /* IE */
     background-color: rgba(255,255,255, 0.6);
-    font-family: monofur, Menlo, Consolas, monospace;
+    font-family: 'Inconsolata', monospace;
     font-size: 11pt;
     line-height: 12pt;
     border: none!important;
@@ -240,16 +244,18 @@ pre, pre.prettyprint
 
 #logo
 {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 10px;
+    padding-bottom: 18px;
     text-align: center;
+    font-family: 'Nobile', arial, serif;
+    font-weight: bold;
+    font-size: 38pt;
+    text-shadow: #d3a63c 3px 3px 6px;
 }
 
 #logo h1 a
 {
-    font-size: 38pt;
     text-decoration: none;
-    text-shadow: #d3a63c 3px 3px 6px;
 }
 
 #main .search input[type=text]
@@ -265,7 +271,8 @@ pre, pre.prettyprint
     width: 103px;
     color: #554c30;
     background-color: rgb(255,239,209);
-    font-size: smaller;
+    font-size: 8pt;
+    font-family: Nobile, arial, serif;
     margin: 0;
     padding-left: 2pt;
     border: 2px solid #caaf84;
@@ -281,17 +288,13 @@ pre, pre.prettyprint
 #nav h4, #nav .navbar-one
 {
     clear: both;
-    font-size: 11pt;
+    font-size: 10pt;
+    font-weight: bold;
 }
 
 #nav ul, #nav .navbar-one li
 {
     margin: .3em .2em;
-}
-
-#nav .navbar-one
-{
-    font-weight: bold;
 }
 
 #nav .navbar-one li
@@ -584,27 +587,27 @@ div#dsq-pagination.dsq-pagination,
 /* Tighten spacing for modest-sized displays */
 @media screen and (max-width:1000px) {
     #main {
-		margin-left: 50px;
-		width: 650px;
-	}
+        margin-left: 50px;
+        width: 650px;
+    }
 }
 
 @media screen and (max-width:940px) {
     #main {
-		margin-left: 20px;
+        margin-left: 20px;
         width: 600px;
-	}
+    }
 }
 
 /* Pin navigation so small screens get scrollbars rather than overlapping */
 @media screen and (max-width:740px) {
     #main {
-		margin-left: 10px;
-	}
+        margin-left: 10px;
+    }
 
     #nav {
-    	position: absolute;
-    	left: 630px;
-    	z-index:5;
-	}
+        position: absolute;
+        left: 630px;
+        z-index:5;
+    }
 }
