@@ -66,11 +66,11 @@
 
     <div class="subscribe clearfix">
         <ul class="inline">
-            <li><a href="http://twitter.com/?status=reading: {{ object.title }} - http://{{ BLOG_SETTINGS.site.domain }}{{ object.get_absolute_url }}" target="_blank">{% trans "Twitter this" %}</a></li>
-            <li><a href="http://www.reddit.com/submit?title={{ object.title }}&amp;url=http://{{ BLOG_SETTINGS.site.domain }}{{ object.get_absolute_url }}" target="_blank">{% trans "Reddit this" %}</a></li>
+            <li><a href="http://twitter.com/?status={% filter urlencode %}reading: {{ object.title }} - http://{{ BLOG_SETTINGS.site.domain }}{{ object.get_absolute_url }}{% endfilter %}" target="_blank">{% trans "Twitter this" %}</a></li>
+            <li><a href="http://www.reddit.com/submit?title={% filter urlencode %}{{ object.title }}&amp;url=http://{{ BLOG_SETTINGS.site.domain }}{{ object.get_absolute_url }}{% endfilter %}" target="_blank">{% trans "Reddit this" %}</a></li>
             <li><a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;">{% trans "Add to Delicious" %}</a></li>
             {% if BLOG_SETTINGS.email_subscribe_url %}
-            <li><a href="{{ BLOG_SETTINGS.rss_url }}">{% trans "Subscribe RSS" %}</a></li>
+                <li><a href="{{ BLOG_SETTINGS.rss_url }}">{% trans "Subscribe RSS" %}</a></li>
             {% endif %}
         </ul>
     </div>
