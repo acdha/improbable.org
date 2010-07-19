@@ -6,6 +6,9 @@ http://github.com/acdha/django-sugar/tarball/master
 http://github.com/acdha/django-basic-apps/tarball/master
 http://github.com/acdha/django-mingus/tarball/master
 
+# this version has working async code:
+http://github.com/acdha/django-google-analytics/tarball/master
+
 django-extensions
 
 html5lib
