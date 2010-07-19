@@ -7,19 +7,19 @@
         <title>{% block title %}{{ BLOG_SETTINGS.site_name }}{% endblock %}</title>
 
         {% block meta %}
-        <meta name="keywords" content="{{ BLOG_SETTINGS.meta_keywords }}">
-        <meta name="description" content="{{ BLOG_SETTINGS.meta_description }}">
-        <meta name="author" content="{{ BLOG_SETTINGS.author_name }}">
-        <meta http-equiv="Content-Style-Type" content="text/css">
+            <meta name="keywords" content="{{ BLOG_SETTINGS.meta_keywords }}">
+            <meta name="description" content="{{ BLOG_SETTINGS.meta_description }}">
+            <meta name="author" content="{{ BLOG_SETTINGS.author_name }}">
+            <meta http-equiv="Content-Style-Type" content="text/css">
         {% endblock %}
 
         <meta name="copyright" content="{{ BLOG_SETTINGS.copyright }}">
         <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico" type="image/x-icon">
 
         {% block rss %}
-        <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} main rss feed" href="{{ BLOG_SETTINGS.rss_url }}">
-        <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all entries feed" href="/feeds/all/">
-        <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all posts feed" href="/feeds/latest/">
+            <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} main rss feed" href="{{ BLOG_SETTINGS.rss_url }}">
+            <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all entries feed" href="/feeds/all/">
+            <link rel="alternate" type="application/rss+xml" title="{{ BLOG_SETTINGS.site_name }} all posts feed" href="/feeds/latest/">
         {% endblock %}
 
         {% if DEBUG or LOCAL_DEV %}
@@ -44,13 +44,14 @@
         <meta name="viewport" content="initial-scale=1.0">
 
         {% block analytics %}
-        <!-- django-google-analytics -->
-        {% cache 7200 "base.analytics" %}
-        {% analytics_async %}
-        {% endcache %}
+            <!-- django-google-analytics -->
+            {% cache 7200 "base.analytics" %}
+            {% analytics_async %}
+            {% endcache %}
         {% endblock analytics %}
 
         {% disqus_dev %}
+
         {% block extra_head %}{% endblock %}
     </head>
     <body id="{% block body_id %}page-{{ request.path|slugify|default:"root" }}{% endblock %}" class="{% block body_class %}blog{% endblock %}">
@@ -61,24 +62,24 @@
             </div>
 
             {% cache 3600 "base.navbars" %}
-            <div id="navbars">
-            {% navbars %}
-            </div>
+                <div id="navbars">{% navbars %}</div>
             {% endcache %}
 
-            {% cache 3600 "base.profiles" %}
-            {% get_elsewhere_profiles as profiles %}
-            {% if profiles %}
-            <div id="profiles">
-                <h4>{% trans "Elsewhere" %}</h4>
-                <ul>
-                    {% for item in profiles %}
-                    <li class="cat-{{ item.category.title|slugify }}"><a href="{{ item.url }}" rel="me" title="{{ item.name }}">{{ item.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-            {% endcache %}
+            {% block profiles %}
+                {% cache 3600 "base.profiles" %}
+                    {% get_elsewhere_profiles as profiles %}
+                    {% if profiles %}
+                    <div id="profiles">
+                        <h4>{% trans "Elsewhere" %}</h4>
+                        <ul>
+                            {% for item in profiles %}
+                            <li class="cat-{{ item.category.title|slugify }}"><a href="{{ item.url }}" rel="me" title="{{ item.name }}">{{ item.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                {% endcache %}
+            {% endblock %}
 
             {% cache 3600 "base.blogroll" %}
             {% get_blogroll 10 as blogroll %}
@@ -146,21 +147,23 @@
         </div>
 
         <div id="footer">
-            {% cache 3600 "base.footer" %}
-            {% flatblock "footer" 3600 "flatblocks/bare.html" %}
-            {% endcache %}
+            {% block footer %}
+                {% cache 3600 "base.footer" %}
+                    {% flatblock "footer" 3600 "flatblocks/bare.html" %}
+                {% endcache %}
+            {% endblock %}
         </div>
 
         {% block extra_base %}
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-        <script type="text/javascript" charset="utf-8">
-            jQuery(function($) {
-                $("head").append(unescape('%3Clink%20rel%3D%22stylesheet%22%20href%3D%22{{ STATIC_URL }}css%2Fprettify.css%22%20type%3D%22text%2Fcss%22%20media%3D%22screen%22%20title%3D%22no%20title%22%20charset%3D%22utf-8%22%3E'));
-                $.getScript('{{ STATIC_URL }}js/prettify.js', function(){
-                    prettyPrint();
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+            <script type="text/javascript" charset="utf-8">
+                jQuery(function($) {
+                    $("head").append(unescape('%3Clink%20rel%3D%22stylesheet%22%20href%3D%22{{ STATIC_URL }}css%2Fprettify.css%22%20type%3D%22text%2Fcss%22%20media%3D%22screen%22%20title%3D%22no%20title%22%20charset%3D%22utf-8%22%3E'));
+                    $.getScript('{{ STATIC_URL }}js/prettify.js', function(){
+                        prettyPrint();
+                    });
                 });
-            });
-        </script>
+            </script>
         {% endblock extra_base %}
     </body>
 </html>
