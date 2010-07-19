@@ -6,6 +6,7 @@
 
 body
 {
+    background-color: black;
     color: white;
     font-family: Optima, "Helvetica Neue", sans-serif;
     background: #000412 url(../../img/leaves_bg_flip.jpg) no-repeat fixed left bottom;
