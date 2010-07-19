@@ -24,14 +24,19 @@
 
         {% if DEBUG or LOCAL_DEV %}
             <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css?{{ MEDIA_KEY }}" type="text/css" media="all" charset="utf-8">
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves.css?{{ MEDIA_KEY }}" type="text/css" media="screen and (min-device-width: 481px)" charset="utf-8">
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves.css?{{ MEDIA_KEY }}" type="text/css" media="all and (min-device-width: 481px)" charset="utf-8">
             <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/iphone.css?{{ MEDIA_KEY }}" type="text/css" media="only screen and (max-device-width: 480px)" charset="utf-8">
         {% else %}
-            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves_min.css?{{ MEDIA_KEY }}" type="text/css" media="screen and (min-device-width: 481px)" charset="utf-8">
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves_min.css?{{ MEDIA_KEY }}" type="text/css" media="all and (min-device-width: 481px)" charset="utf-8">
             <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/iphone_min.css?{{ MEDIA_KEY }}" type="text/css" media="only screen and (max-device-width: 480px)" charset="utf-8">
         {% endif %}
 
         <!--[if IE]>
+            {% if DEBUG or LOCAL_DEV %}
+                <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves.css?{{ MEDIA_KEY }}" type="text/css" media="all" charset="utf-8">
+            {% else %}
+                <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/black_leaves_min.css?{{ MEDIA_KEY }}" type="text/css" media="all" charset="utf-8">
+            {% endif %}
             <link rel="stylesheet" href="{{ STATIC_URL}}css/themes/black_leaves_iefixes.css?{{ MEDIA_KEY }}" type="text/css" media="all">
         <![endif]-->
 
