@@ -2,6 +2,8 @@
 
 import time
 
+from mingus.settings_dev import *
+
 from imp_settings.global_settings import *
 
 MEDIA_KEY = time.time()
@@ -14,8 +16,7 @@ TEMPLATE_DEBUG  = DEBUG
 THUMBNAIL_DEBUG = DEBUG
 
 # Completely disable caching to avoid masking performance problems:
-if DEBUG and False:
-    CACHE_BACKEND = "dummy://"
+CACHE_BACKEND = "dummy://"
 
 DATABASES = {
     'default': {
@@ -27,7 +28,7 @@ DATABASES = {
 INSTALLED_APPS += ('debug_toolbar', 'django_extensions', 'test_utils')
 
 # NOTE: Your IP must be in this file to use django-debug-toolbar:
-INTERNAL_IPS = ('127.0.0.1',)
+INTERNAL_IPS = ('127.0.0.1', )
 
 # django-debug-toolbar
 DEBUG_TOOLBAR_CONFIG = {
