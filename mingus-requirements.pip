@@ -1,0 +1,49 @@
+# django>=1.3.0
+BeautifulSoup==3.1.0.1
+PIL==1.1.7
+python-dateutil==1.4.1
+django-tagging==0.3
+Pygments==1.1.1
+feedparser==4.1
+Markdown==2.0.1
+textile==2.1.3
+django-robots==0.8.0
+
+django-extensions==0.6
+
+# Not on PyPI:
+http://github.com/acdha/django-basic-apps/tarball/master#egg=django-basic-apps
+
+django-flatblocks==0.3.5
+django-disqus==0.1
+django-navbar==0.3.0
+django-sentry==1.6.5
+
+sorl-thumbnail==3.2.5
+django-oembed==0.1.3
+# django-template-utils
+django-proxy==0.1.0
+
+django-compressor==0.6a6
+django-markup==0.3.1dev
+
+# Not on PyPI:
+http://github.com/clintecker/django-google-analytics/tarball/master#egg=django-google-analytics
+
+django-view-cache-utils==0.1.1
+django-contact-form==0.3
+django-honeypot==0.3.0
+
+# Not on PyPI:
+http://github.com/montylounge/django-sugar/tarball/master#egg=django-sugar
+django-quoteme==0.2
+
+django-bitly==0.5
+django-twitter==0.1
+python-twitter==0.6
+django-tinymce==1.5.1.dev100
+django-wysiwyg==0.1.0
+django-slimmer==0.0.2
+django-cropper==0.1.5a
+django-dbtemplates==0.6.1
+django-memcache-status==1.0.1

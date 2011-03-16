@@ -1,7 +1,3 @@
-# NOTE: You must install the mingus requirements first!
-
-Django==1.2.1
-
 http://github.com/acdha/django-sugar/tarball/master
 http://github.com/acdha/django-basic-apps/tarball/master
 http://github.com/acdha/django-mingus/tarball/master
@@ -9,12 +5,11 @@ http://github.com/acdha/django-mingus/tarball/master
 # this version has working async code:
 http://github.com/acdha/django-google-analytics/tarball/master
 
-django-extensions
+html5lib==0.9.0
+chardet==1.0.1
 
-html5lib
-chardet
+lxml==2.2.7
 
-lxml
-PIL
+South==0.7.2
 
-South>=0.6.2
+-r mingus-requirements.pip
