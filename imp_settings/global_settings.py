@@ -29,12 +29,10 @@ THUMBNAIL_DEBUG = DEBUG
 PROJECT_ROOT = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
-STATIC_ROOT= os.path.join(MEDIA_ROOT, "static")
+STATIC_ROOT = os.path.join(MEDIA_ROOT, "static")
 STATIC_URL = urljoin(MEDIA_URL, "static/")
 
-TEMPLATE_DIRS = (
-    os.path.realpath(os.path.join(PROJECT_ROOT, 'templates')),
-) + TEMPLATE_DIRS
+TEMPLATE_DIRS += (os.path.realpath(os.path.join(PROJECT_ROOT, 'templates')), )
 
 # SECURITY NOTE: Change these in your production config!
 SECRET_KEY          = '6es\f,@F-2O4}{yY1w&mzTh!NsSm\me'
@@ -60,14 +58,6 @@ CACHE_MIDDLEWARE_ANONYMOUS_ONLY = True
 
 # Turn on some helpful template variables:
 TEMPLATE_CONTEXT_PROCESSORS += ('sugar.context_processors.site_settings',)
-
-# I dislike the django-request performance anti-pattern, so we'll disable it:
-INSTALLED_APPS = tuple(
-    app for app in INSTALLED_APPS if app not in ('request', 'compressor')
-)
-MIDDLEWARE_CLASSES = tuple(
-    i for i in MIDDLEWARE_CLASSES if not i.startswith("request.")
-)
 
 # NOTE: Your IP must be in this file to use django-debug-toolbar:
 INTERNAL_IPS = ('127.0.0.1',)
