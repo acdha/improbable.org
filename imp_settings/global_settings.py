@@ -61,3 +61,5 @@ MARKUP_CHOICES = (
     'textile',
     'restructuredtext'
 )
+
+GOOGLE_ANALYTICS_TRACK_PAGE_LOAD_TIME = True
