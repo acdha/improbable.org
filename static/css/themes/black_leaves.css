@@ -126,6 +126,14 @@ q
     line-height: 1.1;
 }
 
+.bookmark blockquote
+{
+    margin: .3em;
+    margin-left: 1em;
+    padding-left: 1em;
+    border-left: solid blue 1px; /* Netscape lives! */
+}
+
 /* Fixups for pages where the HTML hierarchy is slightly more complicated */
 
 .content .body, .content .teaser, .content .quote .source, .content .related, .content .tags,  .content .subscribe, #comments
